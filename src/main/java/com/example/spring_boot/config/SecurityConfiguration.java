@@ -41,6 +41,8 @@ public class SecurityConfiguration {
                 .permitAll()
                 .requestMatchers("/h2-console/**")
                 .permitAll()
+                .requestMatchers("/products/**")
+                .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -57,7 +59,7 @@ public class SecurityConfiguration {
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(List.of("http://localhost:8005"));
+        configuration.setAllowedOrigins(List.of("http://localhost:8081"));
         configuration.setAllowedMethods(List.of("GET","POST"));
         configuration.setAllowedHeaders(List.of("Authorization","Content-Type"));
 
