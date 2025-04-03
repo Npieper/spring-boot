@@ -1,5 +1,6 @@
 package com.example.spring_boot.config;
 
+import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -41,8 +42,10 @@ public class SecurityConfiguration {
                 .permitAll()
                 .requestMatchers("/h2-console/**")
                 .permitAll()
-                .requestMatchers("/products/**")
-                .permitAll()
+                .requestMatchers("/favicon.ico", "/resources/**", "/static/**", "/public/**", "/webjars/**")
+                .permitAll() // 🛠 Favicon und statische Ressourcen freigeben
+                //.requestMatchers("/products/**")
+                //.permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
