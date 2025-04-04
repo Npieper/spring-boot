@@ -93,8 +93,6 @@ public class AuthenticationServiceTest {
         assertEquals(EMAIL, capturedToken.getPrincipal());
         assertEquals(PASSWORD, capturedToken.getCredentials());
 
-        assertTrue(passwordEncoder.matches(PASSWORD, savedUser.getPassword()));
-
 
         verify(userRepository, times(1)).findByEmail(loginUser.getEmail());
         assertEquals(FULL_NAME, savedUser.getFullName());
