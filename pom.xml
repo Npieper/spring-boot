@@ -134,6 +134,11 @@
 			<version>5.11.4</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.iban4j</groupId>
+			<artifactId>iban4j</artifactId>
+			<version>3.2.11-RELEASE</version>
+		</dependency>
 	</dependencies>
 
 	<build>
